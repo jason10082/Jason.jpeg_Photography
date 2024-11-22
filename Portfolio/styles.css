@@ -1,0 +1,269 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: century, sans-serif;
+    color: #EEEEEE; /* Light Text */
+    background-color: #222831; /* Dark Background */
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #31363F; /* Header Background */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #76ABAE; /* Header Text */
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Navigation Links */
+.nav-links ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 10px;
+}
+
+.nav-links ul li a {
+    color: #EEEEEE; /* Link Text */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.nav-links ul li a:hover {
+    background-color: #76ABAE; /* Hover Background */
+    border-radius: 5px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #EEEEEE; /* Light Hamburger Lines */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dropdown Navigation */
+.nav-links {
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 20px; 
+    background-color: #31363F; /* Dropdown Background */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%; 
+    z-index: 999; 
+}
+
+.nav-links.active {
+    display: block; 
+}
+
+.nav-links ul {
+    display: flex;
+    flex-direction: row; 
+    gap: 10px; 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 768px) {
+    .hamburger {
+        display: none; 
+    }
+
+    .nav-links {
+        display: flex !important; 
+        position: static; 
+        flex: 1;
+        justify-content: center; 
+        background: none; 
+        box-shadow: none;
+        padding: 0;
+        width: auto; 
+    }
+
+    .nav-links ul {
+        flex-direction: row; 
+        gap: 20px;
+    }
+}
+
+/* Work Section */
+#work {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#work h2 {
+    color: #76ABAE; /* Section Header Text */
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.portfolio {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio-item {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    border: 2px solid #31363F; /* Border */
+    border-radius: 8px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Text on the image */
+.portfolio-item .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #EEEEEE; /* Text color */
+    font-size: 32px;
+    font-family: Century, sans-serif;
+    font-weight: bold;
+    z-index: 2; /* Ensures the text is always visible above other elements */
+}
+
+/* Overlay */
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(49, 54, 63, 0.9); /* Darker Overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Button inside the overlay */
+.portfolio-item .overlay button {
+    background-color: #606464; /* Button Background */
+    color: #EEEEEE; /* Button Text */
+    border: none;
+    padding: 30px 310px;
+    font-size: 35px;
+    font-family: century, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.portfolio-item .overlay button:hover {
+    background-color: #31363F; /* Hover Button Background */
+}
+
+/* Instagram Section Styles */
+#contact {
+    text-align: center;
+    margin: 150px;
+    font-size: 25px
+}
+
+.instagram-link {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    align-items: row;
+    color: #222831;
+}
+
+.instagram-link img.profile-pic {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* To make the image circular */
+    object-fit: cover; /* Ensures the image is nicely cropped */
+    margin-bottom: 5px;
+}
+
+.instagram-link span {
+    display: block;
+    font-size: 20px;
+    color: #31363F;
+    font-weight: bold;
+}
+
+/* Hover Effect */
+.instagram-link:hover img.profile-pic {
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: 0.3s ease;
+}
+
+.instagram-link:hover span {
+    color: #76ABAE; /* Change text color on hover */
+}
+
+/* About Section */
+#about {
+    padding: 200px 50px;
+    text-align: center;
+    background-color: #31363F; /* About Section Background */
+    border-top: 3px solid #76ABAE; /* Section Border */
+}
+
+#about h2 {
+    color: #EEEEEE; /* About Section Header */
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+#about p {
+    font-size: 42px;
+    text-align: match-parent;
+}
+
+/* Footer */
+footer {
+    background-color: #31363F; /* Footer Background */
+    text-align: center;
+    padding: 10px 0;
+    color: #EEEEEE; /* Footer Text */
+    font-size: 14px;
+    border-top: 3px solid #76ABAE; /* Footer Border */
+}
